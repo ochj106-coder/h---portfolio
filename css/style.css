@@ -233,7 +233,7 @@ div#preloader {
 }
 
 .section-headline h2::after {
-  border: 1px solid #333;
+  border: 1px solid #fff;
   bottom: -20px;
   content: "";
   left: 0;
@@ -470,7 +470,7 @@ div#preloader {
 --------------------------------*/
 
 .about-area {
-  background-color: #f9f9f9;
+  background-color: #fff;
 }
 
 .single-well>a {
@@ -551,7 +551,7 @@ div#preloader {
 }
 
 .test-overly {
-  background: rgba(0, 0, 0, 0.80);
+  background: #5267b7;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1091,8 +1091,8 @@ div#preloader {
 }
 
 .project-menu li a.active, .project-menu li a:hover {
-  border-color: #3EC1D5;
-  background: #3EC1D5;
+  border-color: #5267b7;
+  background: #5267b7;
   color: #fff;
   text-decoration: none;
 }
@@ -1621,6 +1621,13 @@ div#preloader {
 .contact-area {
   height: auto;
   width: 100%;
+  background-color: #5267b7;
+  color: #fff;
+}
+
+/* 미정추가 */
+.contact-area p, .contact-area h2{
+  color: #fff ;
 }
 
 .contact-content {
@@ -1708,7 +1715,7 @@ div#preloader {
   font-size: 24px;
   width: 50px;
   height: 50px;
-  border: 1px solid #444;
+  border: 1px solid #fff;
   line-height: 46px;
   border-radius: 50%;
   margin-bottom: 20px;
