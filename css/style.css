@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 120px;
   line-height: 50px;
 }
 
@@ -233,7 +233,7 @@ div#preloader {
 }
 
 .section-headline h2::after {
-  border: 1px solid #fff;
+  border: 1px solid #333;
   bottom: -20px;
   content: "";
   left: 0;
@@ -470,7 +470,7 @@ div#preloader {
 --------------------------------*/
 
 .about-area {
-  background-color: #fff;
+  background-color: #f9f9f9;
 }
 
 .single-well>a {
@@ -551,7 +551,7 @@ div#preloader {
 }
 
 .test-overly {
-  background: #5267b7;
+  background: rgba(0, 0, 0, 0.80);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1091,8 +1091,8 @@ div#preloader {
 }
 
 .project-menu li a.active, .project-menu li a:hover {
-  border-color: #5267b7;
-  background: #5267b7;
+  border-color: #3EC1D5;
+  background: #3EC1D5;
   color: #fff;
   text-decoration: none;
 }
@@ -1345,10 +1345,24 @@ div#preloader {
 ----------------------------------------*/
 
 .testimonials-area {
-  background: rgba(0, 0, 0, 0) url("../img/background/slider1.jpg") no-repeat fixed center top / cover;
-  height: auto;
-  width: 100%;
+    background: rgba(0, 0, 0, 0) url("../img/background/slider1.jpg") no-repeat fixed center top / cover;
+    height: auto;
+    width: 100%;
 }
+   .testimonials-area {
+background-image: url('../img/slider/slider1.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+.testimonials-area::before,
+.testimonials-area:before {
+    background: none !important;
+    background-color: transparent !important;
+    opacity: 0 !important;
+    display: none !important;
+}
+
 
 .testi-inner {
   position: relative;
@@ -1621,13 +1635,6 @@ div#preloader {
 .contact-area {
   height: auto;
   width: 100%;
-  background-color: #5267b7;
-  color: #fff;
-}
-
-/* 미정추가 */
-.contact-area p, .contact-area h2{
-  color: #fff ;
 }
 
 .contact-content {
@@ -1715,7 +1722,7 @@ div#preloader {
   font-size: 24px;
   width: 50px;
   height: 50px;
-  border: 1px solid #fff;
+  border: 1px solid #444;
   line-height: 46px;
   border-radius: 50%;
   margin-bottom: 20px;
@@ -2372,4 +2379,30 @@ span.email-notes {
   color: #3EC1D5;
     padding-right: 10px;
     font-size: 12px;
+}
+
+
+.bend.niceties.preview-2::before,
+.slider-direction::before,
+.nivo-caption::before {
+    background: transparent !important;
+    background-color: transparent !important;
+    opacity: 0 !important;
+    display: none !important;
+}
+
+.layer-1-1,
+.layer-1-2,
+.layer-1-3{
+    position: relative;
+    top: 120px;
+}
+
+.layer-1-3{
+    position: relative;
+    top: 100px;
+}
+
+.layer-1-2 h1{
+    font-size: 85px !important;
 }
