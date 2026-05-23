@@ -39,6 +39,8 @@
 html,
 body {
   height: 100%;
+  scroll-behavior: auto;
+  overflow-x: hidden;
 }
 
 .floatleft {
@@ -507,6 +509,16 @@ div#preloader {
   padding-top: 59px;
 }
 
+.custom-popup-overlay {
+  position: fixed !important; /* 스크롤과 상관없이 화면에 고정 */
+  z-index: 999999 !important; /* 네비게이션바나 다른 라이브러리보다 무조건 위로 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* //미정추가 */
 
 
 .about-area {
