@@ -70,25 +70,35 @@
   });
 
   /*---------------------
-    Venobox
+   Venobox
   --------------------- */
   var veno_box = $('.venobox');
   veno_box.venobox();
 
   /*----------------------------
-  Page Scroll
+  Page Scroll (🔥 모달 오픈/닫기 시 상단 튕김 방지 예외 처리 완료)
   ------------------------------ */
-  var page_scroll = $('a.page-scroll');
+  var page_scroll = $('a.page-scroll, .awesome-img a');
   page_scroll.on('click', function(event) {
     var $anchor = $(this);
-    $('html, body').stop().animate({
-      scrollTop: $($anchor.attr('href')).offset().top - 55
-    }, 1500, 'easeInOutExpo');
-    event.preventDefault();
+    var hrefVal = $anchor.attr('href');
+
+    // 💡 클릭한 링크가 모달 팝업(#artModal)인 경우 스크롤 애니메이션 작동을 차단합니다.
+    if (hrefVal && hrefVal.indexOf('#artModal') !== -1) {
+      return; 
+    }
+
+    // 일반 메뉴 이동(#About, #Skill 등)일 때만 부드러운 스크롤 이동 실행
+    if ($(hrefVal).length) {
+      $('html, body').stop().animate({
+        scrollTop: $(hrefVal).offset().top - 55
+      }, 1500, 'easeInOutExpo');
+      event.preventDefault();
+    }
   });
 
   /*--------------------------
-    Back to top button
+   Back to top button
   ---------------------------- */
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
@@ -141,6 +151,7 @@
       }
     }
   });
+
   /*----------------------------
    isotope active
   ------------------------------ */
@@ -177,7 +188,7 @@
 
   /*---------------------
    Circular Bars - Knob
---------------------- */
+  --------------------- */
   if (typeof($.fn.knob) != 'undefined') {
     var knob_tex = $('.knob');
     knob_tex.each(function() {
@@ -210,7 +221,7 @@
   }
 
   /*---------------------
-     Google Maps
+   Google Maps
   --------------------- */
   var get_latitude = $('#google-map').data('latitude');
   var get_longitude = $('#google-map').data('longitude');
@@ -228,6 +239,8 @@
       map: map
     });
   }
-  google.maps.event.addDomListener(window, 'load', initialize_google_map);
+  if ($('#google-map').length) {
+    google.maps.event.addDomListener(window, 'load', initialize_google_map);
+  }
 
 })(jQuery);
