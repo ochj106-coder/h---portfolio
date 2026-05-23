@@ -36,7 +36,8 @@
 /*  1.  Theme default CSS
 /*----------------------------------------*/
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -83,7 +84,12 @@ p {
   color: #444;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Raleway', sans-serif;
   margin: 0 0 15px;
   color: #444;
@@ -130,7 +136,8 @@ a:hover {
   text-decoration: none;
 }
 
-a:active, a:hover {
+a:active,
+a:hover {
   outline: 0 none;
 }
 
@@ -185,7 +192,17 @@ ul {
   padding: 0;
 }
 
-input, select, textarea, input[type="text"], input[type="date"], input[type="url"], input[type="email"], input[type="password"], input[type="tel"], button, button[type="submit"] {
+input,
+select,
+textarea,
+input[type="text"],
+input[type="date"],
+input[type="url"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+button,
+button[type="submit"] {
   -moz-appearance: none;
   box-shadow: none !important;
 }
@@ -242,9 +259,11 @@ div#preloader {
   right: 0;
   width: 40%;
 }
+
 #skill h2::after {
   border: 1px solid rgb(255, 255, 255);
 }
+
 .sec-head {
   display: inline-block;
   font-size: 17px;
@@ -328,7 +347,9 @@ div#preloader {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
 }
 
-.main-menu ul.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+.main-menu ul.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
   background: none;
   color: #333;
 }
@@ -340,12 +361,14 @@ div#preloader {
   padding: 25px 0px;
 }
 
-.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
   background-color: transparent;
   color: #fff;
 }
 
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
   background: none;
 }
 
@@ -410,6 +433,7 @@ div#preloader {
 .sticky-logo h1 span {
   color: #3ec1d5;
 }
+
 .stick .main-menu ul.navbar-nav li.active a::after {
   border: 1px solid #fff;
   bottom: 0px;
@@ -429,13 +453,17 @@ div#preloader {
   position: relative;
 }
 
-.stick .mainmenu ul#nav>li:hover>a, .stick .mainmenu ul#nav li .mega-menu, .stick .mainmenu ul#nav li ul.sub-menu {
+.stick .mainmenu ul#nav>li:hover>a,
+.stick .mainmenu ul#nav li .mega-menu,
+.stick .mainmenu ul#nav li ul.sub-menu {
   background-color: #f5f5f5;
   color: #fff;
   outline: medium none;
 }
 
-.stick .mainmenu ul#nav li:hover ul.sub-menu li a:hover, .mainmenu ul#nav li .mega-menu span>a:hover, .stick .mainmenu ul#nav li .mega-menu-shop a.mega-menu-title:hover {
+.stick .mainmenu ul#nav li:hover ul.sub-menu li a:hover,
+.mainmenu ul#nav li .mega-menu span>a:hover,
+.stick .mainmenu ul#nav li .mega-menu-shop a.mega-menu-title:hover {
   color: #fff;
 }
 
@@ -468,6 +496,18 @@ div#preloader {
 /*------------------------------
   3. About Area
 --------------------------------*/
+
+/* 미정추가 */
+.idphoto {
+  max-width: 55%;
+}
+
+.guide_txt {
+  text-align: center;
+  padding-top: 59px;
+}
+
+
 
 .about-area {
   background-color: #f9f9f9;
@@ -515,8 +555,10 @@ div#preloader {
   transition: all 0.5s ease 0s;
 }
 
-.services-details:hover h4, .services-details:hover .services-icon {
-  color: #3EC1D5;/*hover색*/
+.services-details:hover h4,
+.services-details:hover .services-icon {
+  color: #3EC1D5;
+  /*hover색*/
 }
 
 .row.second-row {
@@ -561,6 +603,8 @@ div#preloader {
   color: #fff;
   font-weight: 500;
 }
+
+
 
 /*----------------------------------------
   6.Faq Area
@@ -615,7 +659,8 @@ div#preloader {
   width: 42px;
 }
 
-.faq-details h4.check-title a.active, .faq-details a.active span.acc-icons::before {
+.faq-details h4.check-title a.active,
+.faq-details a.active span.acc-icons::before {
   color: #3EC1D5;
 }
 
@@ -680,7 +725,9 @@ div#preloader {
   font-size: 18px;
 }
 
-.tab-menu ul li.active a, .tab-menu ul li.hover a, .tab-menu ul li.focus a {
+.tab-menu ul li.active a,
+.tab-menu ul li.hover a,
+.tab-menu ul li.focus a {
   border-bottom: 1px solid #fff;
   color: #3EC1D5 !important;
 }
@@ -970,7 +1017,8 @@ div#preloader {
   padding: 10px 0px;
 }
 
-.team-content>h4, .team-content>p {
+.team-content>h4,
+.team-content>p {
   color: #444;
   margin-bottom: 5px;
 }
@@ -1216,6 +1264,93 @@ div#preloader {
   width: 100%;
 }
 
+/* ==========================================================================
+    🎨 개별 호출형 팝업(모달) 커스텀 CSS
+   ========================================================================== */
+
+.custom-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 99999;
+  display: none; /* js 제어를 원활히 하기 위해 기본 숨김 변경 */
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* 💡 링크 주소 활성화(:target) 시 강제로 display 형태 복구 및 노출 */
+.custom-popup-overlay:target {
+  display: flex !important;
+  opacity: 1;
+}
+
+.custom-popup-content {
+  background: #fff;
+  padding: 40px 25px 25px 25px;
+  border-radius: 8px;
+  max-width: 1000px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+.popup-close-btn {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  font-size: 40px;
+  color: #777;
+  text-decoration: none;
+  line-height: 1;
+  transition: color 0.2s;
+}
+.popup-close-btn:hover {
+  color: #3EC1D5;
+}
+
+.popup-image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.popup-image-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+
+.popup-image-grid img:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 991px) {
+  .popup-image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+}
+
+@media (max-width: 575px) {
+  .popup-image-grid {
+    grid-template-columns: 1fr;
+  }
+  .popup-image-grid img {
+    height: auto;
+  }
+}
 /*----------------------------------------*/
 
 /* 11. Pricing Area
@@ -1345,22 +1480,24 @@ div#preloader {
 ----------------------------------------*/
 
 .testimonials-area {
-    background: rgba(0, 0, 0, 0) url("../img/background/slider1.jpg") no-repeat fixed center top / cover;
-    height: auto;
-    width: 100%;
+  background: rgba(0, 0, 0, 0) url("../img/background/slider1.jpg") no-repeat fixed center top / cover;
+  height: auto;
+  width: 100%;
 }
-   .testimonials-area {
-background-image: url('../img/slider/slider1.jpg') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
+
+.testimonials-area {
+  background-image: url('../img/slider/slider1.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
 }
+
 .testimonials-area::before,
 .testimonials-area:before {
-    background: none !important;
-    background-color: transparent !important;
-    opacity: 0 !important;
-    display: none !important;
+  background: none !important;
+  background-color: transparent !important;
+  opacity: 0 !important;
+  display: none !important;
 }
 
 
@@ -1548,7 +1685,9 @@ background-image: url('../img/slider/slider1.jpg') !important;
   padding: 10px 0;
 }
 
-.comments-type>a, .date-type, .blog-meta span.comments-type {
+.comments-type>a,
+.date-type,
+.blog-meta span.comments-type {
   color: #333;
   letter-spacing: 1px;
   margin-right: 5px;
@@ -1558,7 +1697,10 @@ background-image: url('../img/slider/slider1.jpg') !important;
   padding-right: 0 !important;
 }
 
-.blog-content-right .comments-type>a, .blog-content-right .date-type, .blog-content-right .blog-meta span.comments-type, .blog-content-right .blog-text p {
+.blog-content-right .comments-type>a,
+.blog-content-right .date-type,
+.blog-content-right .blog-meta span.comments-type,
+.blog-content-right .blog-text p {
   color: #fff;
   letter-spacing: 1px;
 }
@@ -1646,7 +1788,8 @@ background-image: url('../img/slider/slider1.jpg') !important;
   padding: 100px;
 }
 
-.contact-form input[type="text"], .contact-form input[type="email"] {
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   border: 1px solid #ccc;
   border-radius: 0;
@@ -1657,7 +1800,7 @@ background-image: url('../img/slider/slider1.jpg') !important;
   width: 100%;
 }
 
-.contact-form textarea  {
+.contact-form textarea {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   border: 1px solid #ccc;
   border-radius: 0;
@@ -1686,7 +1829,7 @@ background-image: url('../img/slider/slider1.jpg') !important;
   background: #3EC1D5;
 }
 
-.contact-form  #sendmessage {
+.contact-form #sendmessage {
   color: #3EC1D5;
   border: 1px solid #3EC1D5;
   display: none;
@@ -1706,7 +1849,9 @@ background-image: url('../img/slider/slider1.jpg') !important;
   margin-bottom: 15px;
 }
 
-.contact-form #sendmessage.show, .contact-form #errormessage.show, .contact-form .show {
+.contact-form #sendmessage.show,
+.contact-form #errormessage.show,
+.contact-form .show {
   display: block;
 }
 
@@ -1822,7 +1967,8 @@ background-image: url('../img/slider/slider1.jpg') !important;
   overflow: hidden;
 }
 
-.popular-tag ul li a:hover, .footer-icons ul li a:hover {
+.popular-tag ul li a:hover,
+.footer-icons ul li a:hover {
   background: #3EC1D5;
   border: 1px solid #3EC1D5;
   color: #fff;
@@ -1864,7 +2010,8 @@ background-image: url('../img/slider/slider1.jpg') !important;
   color: #444;
 }
 
-.copyright a, .credits a {
+.copyright a,
+.credits a {
   color: #3EC1D5;
 }
 
@@ -1899,7 +2046,8 @@ background-image: url('../img/slider/slider1.jpg') !important;
   width: 100%;
 }
 
-.home-2 .layer-1-3, .home-3 .layer-1-3 {
+.home-2 .layer-1-3,
+.home-3 .layer-1-3 {
   margin: 10px 0 0;
 }
 
@@ -2046,7 +2194,8 @@ background-image: url('../img/slider/slider1.jpg') !important;
   width: 65%;
 }
 
-.pst-content p a:hover, .left-blog ul li a:hover {
+.pst-content p a:hover,
+.left-blog ul li a:hover {
   color: #3EC1D5;
 }
 
@@ -2059,7 +2208,8 @@ background-image: url('../img/slider/slider1.jpg') !important;
   font-size: 15px;
 }
 
-.header-bottom h1, .header-bottom h2 {
+.header-bottom h1,
+.header-bottom h2 {
   color: #fff;
 }
 
@@ -2147,7 +2297,12 @@ background-image: url('../img/slider/slider1.jpg') !important;
   padding: 22px 20px;
 }
 
-.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
+.pagination>.active>a,
+.pagination>.active>span,
+.pagination>.active>a:hover,
+.pagination>.active>span:hover,
+.pagination>.active>a:focus,
+.pagination>.active>span:focus {
   background-color: #3EC1D5;
   border-color: #3EC1D5;
   color: #fff;
@@ -2217,7 +2372,8 @@ background-image: url('../img/slider/slider1.jpg') !important;
   max-width: 650px;
 }
 
-.comments-heading h3, h3.comment-reply-title {
+.comments-heading h3,
+h3.comment-reply-title {
   border-bottom: 1px solid #e8e8e9;
   color: #444;
   font-size: 18px;
@@ -2299,7 +2455,8 @@ span.email-notes {
   margin-bottom: 5px;
 }
 
-.comment-respond input[type=text], .comment-respond input[type=email] {
+.comment-respond input[type=text],
+.comment-respond input[type=email] {
   border: 1px solid #e5e5e5;
   border-radius: 0;
   height: 32px;
@@ -2361,49 +2518,52 @@ span.email-notes {
 ----------------------------------------*/
 
 
-.brand_link a{
+.brand_link a {
   display: inline-block;
   border: 1px solid #3EC1D5;
   border-radius: 30px;
   padding: 6px 20px;
 }
-.spacing{
+
+.spacing {
   padding-top: 100px;
 }
-.single-well1 ul li{
+
+.single-well1 ul li {
   color: #444;
-    display: block;
-    padding: 5px 0;
+  display: block;
+  padding: 5px 0;
 }
-.single-well1 ul li i{
+
+.single-well1 ul li i {
   color: #3EC1D5;
-    padding-right: 10px;
-    font-size: 12px;
+  padding-right: 10px;
+  font-size: 12px;
 }
 
 
 .bend.niceties.preview-2::before,
 .slider-direction::before,
 .nivo-caption::before {
-    background: transparent !important;
-    background-color: transparent !important;
-    opacity: 0 !important;
-    display: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  opacity: 0 !important;
+  display: none !important;
 }
 
 .layer-1-1,
 .layer-1-2,
-.layer-1-3{
-    position: relative;
-    top: 100px;
+.layer-1-3 {
+  position: relative;
+  top: 100px;
 }
 
-.layer-1-3{
-    position: relative;
-    top: 110px;
-font-size: 30px;
+.layer-1-3 {
+  position: relative;
+  top: 110px;
+  font-size: 30px;
 }
 
-.layer-1-2 h1{
-    font-size: 85px !important;
+.layer-1-2 h1 {
+  font-size: 85px !important;
 }
