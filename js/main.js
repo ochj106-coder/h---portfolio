@@ -244,3 +244,35 @@
   }
 
 })(jQuery);
+
+/*--------------------------
+   Circular Bars - Knob (자동 추가)
+   ---------------------------- */
+  if (typeof($.fn.knob) != 'undefined') {
+    $('.knob').each(function() {
+      var $this = $(this);
+      var knobVal = $this.attr('data-rel');
+
+      $this.knob({
+        'draw': function() {
+          $(this.i).val(this.cv + '%');
+        }
+      });
+
+      // 스크롤 시 애니메이션 실행 (별도 파일 없이 작동)
+      $(window).on('scroll', function() {
+        var winScroll = $(window).scrollTop() + $(window).height();
+        var elementOffset = $this.offset().top;
+
+     if (winScroll > elementOffset + 100 && !$this.hasClass('animated')) {
+          $this.addClass('animated');
+          $({value: 0}).animate({ value: knobVal }, {
+            duration: 1000,
+            step: function() {
+              $this.val(Math.ceil(this.value)).trigger('change');
+            }
+          });
+        }
+      });
+    });
+  }
