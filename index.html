@@ -761,9 +761,11 @@
 
   </div>
 
-  <div id="Skill" class="area-padding">
-    <div class="our-skill-area fix">
-      <div class="test-overly"></div>
+<div id="Skill" class="area-padding">
+  <div class="our-skill-area fix">
+    <div class="test-overly"></div>
+    
+    <div class="container">
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="section-headline text-center">
@@ -771,64 +773,60 @@
           </div>
         </div>
       </div>
-      <div class="skill-bg area-padding-2">
-        <div class="container">
-          <div class="row">
-            <div class="skill-text">
-
-              <div class="col-xs-12 col-sm-6 col-md-3 text-center" style="margin-bottom: 40px;">
-                <div class="single-skill" style="display: inline-block;">
-                  <div class="progress-circular">
-                    <input type="text" class="knob" value="0" data-rel="90" data-linecap="round" data-width="175"
-                      data-bgcolor="#fff" data-fgcolor="#3EC1D5" data-thickness=".20" data-readonly="true" disabled>
-                    <h3 class="progress-h4">Photoshop</h3>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-xs-12 col-sm-6 col-md-3 text-center" style="margin-bottom: 40px;">
-                <div class="single-skill" style="display: inline-block;">
-                  <div class="progress-circular">
-                    <input type="text" class="knob" value="0" data-rel="80" data-linecap="round" data-width="175"
-                      data-bgcolor="#fff" data-fgcolor="#3EC1D5" data-thickness=".20" data-readonly="true" disabled>
-                    <h3 class="progress-h4">Illustrator</h3>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-xs-12 col-sm-6 col-md-3 text-center" style="margin-bottom: 40px;">
-                <div class="single-skill" style="display: inline-block;">
-                  <div class="progress-circular">
-                    <input type="text" class="knob" value="0" data-rel="70" data-linecap="round" data-width="175"
-                      data-bgcolor="#fff" data-fgcolor="#3EC1D5" data-thickness=".20" data-readonly="true" disabled>
-                    <h3 class="progress-h4">한글 2026</h3>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-xs-12 col-sm-6 col-md-3 text-center" style="margin-bottom: 40px;">
-                <div class="single-skill" style="display: inline-block;">
-                  <div class="progress-circular">
-                    <input type="text" class="knob" value="0" data-rel="75" data-linecap="round" data-width="175"
-                      data-bgcolor="#fff" data-fgcolor="#3EC1D5" data-thickness=".20" data-readonly="true" disabled>
-                    <h3 class="progress-h4">생성형 AI</h3>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
+    <div class="skill-bg area-padding-2">
+      <div class="container">
+        <div class="row">
+          <div class="skill-text">
+
+            <div class="col-xs-12 col-sm-6 col-md-3 text-center" style="margin-bottom: 40px;">
+              <div class="single-skill" style="display: inline-block;">
+                <div class="progress-circular">
+                  <input type="text" class="knob" value="0" data-rel="90" data-linecap="round" data-width="175"
+                    data-bgcolor="#fff" data-fgcolor="#3EC1D5" data-thickness=".20" data-readonly="true" disabled>
+                  <h3 class="progress-h4">Photoshop</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-3 text-center" style="margin-bottom: 40px;">
+              <div class="single-skill" style="display: inline-block;">
+                <div class="progress-circular">
+                  <input type="text" class="knob" value="0" data-rel="80" data-linecap="round" data-width="175"
+                    data-bgcolor="#fff" data-fgcolor="#3EC1D5" data-thickness=".20" data-readonly="true" disabled>
+                  <h3 class="progress-h4">Illustrator</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-3 text-center" style="margin-bottom: 40px;">
+              <div class="single-skill" style="display: inline-block;">
+                <div class="progress-circular">
+                  <input type="text" class="knob" value="0" data-rel="70" data-linecap="round" data-width="175"
+                    data-bgcolor="#fff" data-fgcolor="#3EC1D5" data-thickness=".20" data-readonly="true" disabled>
+                  <h3 class="progress-h4">한글 2026</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-3 text-center" style="margin-bottom: 40px;">
+              <div class="single-skill" style="display: inline-block;">
+                <div class="progress-circular">
+                  <input type="text" class="knob" value="0" data-rel="75" data-linecap="round" data-width="175"
+                    data-bgcolor="#fff" data-fgcolor="#3EC1D5" data-thickness=".20" data-readonly="true" disabled>
+                  <h3 class="progress-h4">AI</h3>
+                </div>
+              </div>
+            </div>
+
+          </div> </div> </div> </div> </div> </div> ```
+
+---
+
+### 💡 만약 구조를 바꿨는데도 1~20px 미세하게 위치가 안 맞는다면?
+
+템플릿 자체에 상단 네비바가 고정되어 있어서 가려지는 현상일 수 있습니다. 그럴 때는 **`css/style.css`** 파일 맨 아래에 다음 코드를
   <!-- our-skill-area end -->
 
   <!-- Start Footer bottom Area -->
