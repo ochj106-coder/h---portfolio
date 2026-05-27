@@ -2618,4 +2618,5 @@ span.email-notes {
   width: 100%;
   height: auto;
   display: block;
-}repeat(3, 1fr);
+  repeat(3, 1fr);
+}
