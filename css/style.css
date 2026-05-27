@@ -525,6 +525,9 @@ div#preloader {
   grid-template-columns: repeat(1, 1fr) !important;
 }
 
+#Skill {
+  scroll-margin-top: 80px; 
+}
 /* //미정추가 */
 
 
