@@ -517,6 +517,13 @@ div#preloader {
   width: 100%;
   height: 100%;
 }
+.lending_popup{
+  width: 50% !important;
+}
+
+.lending_popup_grid{
+  grid-template-columns: repeat(1, 1fr) !important;
+}
 
 /* //미정추가 */
 
@@ -2595,4 +2602,4 @@ span.email-notes {
   width: 100%;
   height: auto;
   display: block;
-}
+}repeat(3, 1fr);
