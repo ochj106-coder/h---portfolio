@@ -1,12 +1,12 @@
-(function($) {
+(function ($) {
   "use strict";
 
   /*--------------------------
   preloader
   ---------------------------- */
-  $(window).on('load', function() {
+  $(window).on('load', function () {
     var pre_loader = $('#preloader');
-    pre_loader.fadeOut('slow', function() {
+    pre_loader.fadeOut('slow', function () {
       $(this).remove();
     });
   });
@@ -16,7 +16,7 @@
   --------------------- */
   var s = $("#sticker");
   var pos = s.position();
-  $(window).on('scroll', function() {
+  $(window).on('scroll', function () {
     var windowpos = $(window).scrollTop() > 300;
     if (windowpos > pos.top) {
       s.addClass("stick");
@@ -29,7 +29,7 @@
    Navbar nav
   ------------------------------ */
   var main_menu = $(".main-menu ul.navbar-nav li ");
-  main_menu.on('click', function() {
+  main_menu.on('click', function () {
     main_menu.removeClass("active");
     $(this).addClass("active");
   });
@@ -39,7 +39,7 @@
   ------------------------------ */
   new WOW().init();
 
-  $(".navbar-collapse a").on('click', function() {
+  $(".navbar-collapse a").on('click', function () {
     $(".navbar-collapse.collapse").removeClass('in');
   });
 
@@ -63,12 +63,19 @@
   /*----------------------------
    Scrollspy js
   ------------------------------ */
-  var Body = $('body');
-  Body.scrollspy({
-    target: '.navbar-collapse',
-    offset: 80
-  });
+ var Body = $('body');
+Body.scrollspy({
+  target: '.navbar-collapse',
+  offset: 80
+});
 
+// scrollspy가 active 클래스 바꿀 때 navbar li도 같이 업데이트
+$(window).on('activate.bs.scrollspy', function(e, obj) {
+  main_menu.removeClass('active');
+  $(".main-menu ul.navbar-nav li a[href='" + obj.relatedTarget + "']")
+    .closest('li')
+    .addClass('active');
+});
   /*---------------------
    Venobox
   --------------------- */
@@ -76,31 +83,32 @@
   veno_box.venobox();
 
   /*----------------------------
-  Page Scroll (🔥 모달 오픈/닫기 시 상단 튕김 방지 예외 처리 완료)
+   Page Scroll - isotope offset 오류 완전 수정
   ------------------------------ */
-  var page_scroll = $('a.page-scroll, .awesome-img a');
-  page_scroll.on('click', function(event) {
-    var $anchor = $(this);
-    var hrefVal = $anchor.attr('href');
+// $(document).on('click', 'a.page-scroll', function(event) {
+//   var hrefVal = $(this).attr('href');
 
-    // 💡 클릭한 링크가 모달 팝업(#artModal)인 경우 스크롤 애니메이션 작동을 차단합니다.
-    if (hrefVal && hrefVal.indexOf('#artModal') !== -1) {
-      return; 
-    }
+//   if (!hrefVal || hrefVal.indexOf('#artModal') !== -1) {
+//     return;
+//   }
 
-    // 일반 메뉴 이동(#About, #Skill 등)일 때만 부드러운 스크롤 이동 실행
-    if ($(hrefVal).length) {
-      $('html, body').stop().animate({
-        scrollTop: $(hrefVal).offset().top - 55
-      }, 1500, 'easeInOutExpo');
-      event.preventDefault();
-    }
-  });
+//   var $target = $(hrefVal);
+//   if (!$target.length) return;
+
+//   event.preventDefault();
+
+//   var rect = $target[0].getBoundingClientRect();
+//   var absoluteTop = rect.top + window.pageYOffset - 70;
+
+//   $('html, body').stop(true, true).animate({
+//     scrollTop: absoluteTop
+//   }, 1200, 'easeInOutExpo');
+// });
 
   /*--------------------------
    Back to top button
   ---------------------------- */
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $('.back-to-top').fadeIn('slow');
     } else {
@@ -108,8 +116,8 @@
     }
   });
 
-  $('.back-to-top').click(function(){
-    $('html, body').animate({scrollTop : 0},1500, 'easeInOutExpo');
+  $('.back-to-top').click(function () {
+    $('html, body').stop(true, true).animate({ scrollTop: 0 }, 1200, 'easeInOutExpo');
     return false;
   });
 
@@ -125,7 +133,7 @@
    collapse
   ---------------------------- */
   var panel_test = $('.panel-heading a');
-  panel_test.on('click', function() {
+  panel_test.on('click', function () {
     panel_test.removeClass('active');
     $(this).addClass('active');
   });
@@ -156,7 +164,7 @@
    isotope active
   ------------------------------ */
   // portfolio start
-  $(window).on("load", function() {
+  $(window).on("load", function () {
     var $container = $('.awesome-project-content');
     $container.isotope({
       filter: '*',
@@ -166,10 +174,10 @@
         queue: false
       }
     });
+
     var pro_menu = $('.project-menu li a');
-    pro_menu.on("click", function() {
-      var pro_menu_active = $('.project-menu li a.active');
-      pro_menu_active.removeClass('active');
+    pro_menu.on("click", function () {
+      pro_menu.removeClass('active');
       $(this).addClass('active');
       var selector = $(this).attr('data-filter');
       $container.isotope({
@@ -183,25 +191,30 @@
       return false;
     });
 
+    // isotope 배치 완료 후 scroll 이벤트 갱신 (위치 틀어짐 방지)
+    $container.on('layoutComplete', function () {
+      $(window).trigger('scroll');
+    });
+
   });
   //portfolio end
 
   /*---------------------
    Circular Bars - Knob
   --------------------- */
-  if (typeof($.fn.knob) != 'undefined') {
+  if (typeof ($.fn.knob) != 'undefined') {
     var knob_tex = $('.knob');
-    knob_tex.each(function() {
+    knob_tex.each(function () {
       var $this = $(this),
         knobVal = $this.attr('data-rel');
 
       $this.knob({
-        'draw': function() {
+        'draw': function () {
           $(this.i).val(this.cv + '%')
         }
       });
 
-      $this.appear(function() {
+      $this.appear(function () {
         $({
           value: 0
         }).animate({
@@ -209,7 +222,7 @@
         }, {
           duration: 2000,
           easing: 'swing',
-          step: function() {
+          step: function () {
             $this.val(Math.ceil(this.value)).trigger('change');
           }
         });
@@ -246,33 +259,32 @@
 })(jQuery);
 
 /*--------------------------
-   Circular Bars - Knob (자동 추가)
+   Circular Bars - Knob (스크롤 트리거)
    ---------------------------- */
-  if (typeof($.fn.knob) != 'undefined') {
-    $('.knob').each(function() {
-      var $this = $(this);
-      var knobVal = $this.attr('data-rel');
+if (typeof ($.fn.knob) != 'undefined') {
+  $('.knob').each(function () {
+    var $this = $(this);
+    var knobVal = $this.attr('data-rel');
 
-      $this.knob({
-        'draw': function() {
-          $(this.i).val(this.cv + '%');
-        }
-      });
-
-      // 스크롤 시 애니메이션 실행 (별도 파일 없이 작동)
-      $(window).on('scroll', function() {
-        var winScroll = $(window).scrollTop() + $(window).height();
-        var elementOffset = $this.offset().top;
-
-     if (winScroll > elementOffset + 100 && !$this.hasClass('animated')) {
-          $this.addClass('animated');
-          $({value: 0}).animate({ value: knobVal }, {
-            duration: 1000,
-            step: function() {
-              $this.val(Math.ceil(this.value)).trigger('change');
-            }
-          });
-        }
-      });
+    $this.knob({
+      'draw': function () {
+        $(this.i).val(this.cv + '%');
+      }
     });
-  }
+
+    $(window).on('scroll', function () {
+      var winScroll = $(window).scrollTop() + $(window).height();
+      var elementOffset = $this.offset().top;
+
+      if (winScroll > elementOffset + 100 && !$this.hasClass('animated')) {
+        $this.addClass('animated');
+        $({ value: 0 }).animate({ value: knobVal }, {
+          duration: 1000,
+          step: function () {
+            $this.val(Math.ceil(this.value)).trigger('change');
+          }
+        });
+      }
+    });
+  });
+}
