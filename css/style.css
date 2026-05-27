@@ -525,9 +525,22 @@ div#preloader {
   grid-template-columns: repeat(1, 1fr) !important;
 }
 
-#Skill {
-  scroll-margin-top: 80px; 
+#About, #Resume, #Artwork, #Skill {
+  scroll-margin-top: 90px !important; 
 }
+
+.contact-area, .area-padding, .our-skill-area, .skill-bg {
+  content: "";
+  display: block;
+  clear: both; 
+}
+
+.contact-area, .area-padding, .our-skill-area, .skill-bg, .portfolio-area {
+  overflow: hidden !important;
+  display: block !important;
+  clear: both !important;
+}
+
 /* //미정추가 */
 
 
